@@ -26,17 +26,17 @@ if (!String.prototype.formatString) {
  
     $.fn.github_graph = function( options ) {
 
-        //If the number less than 10, add Zero before it
+        // 如果数字小于10，在它前面加0 If the number less than 10, add Zero before it
         var prettyNumber = function( number ){
           return  number < 10 ? '0' + number.toString() : number = number.toString();
         };
  
         /*
-        Count the number on each day and store the object
+        每天计算数量并存储对象 Count the number on each day and store the object 
         */
         var processListTimeStamp = function(list_timestamp){
 
-          //The result will store into this varriable
+          //每天计算数量并存储对象 The result will store into this varriable
           obj_timestamp = {};
           for (var i=0; i < list_timestamp.length; i++){
             var _type = typeof(list_timestamp[i]);            
@@ -89,7 +89,7 @@ if (!String.prototype.formatString) {
 
           var start_date;
           if (settings.start_date == null) {
-              // if set null, will get from 365 days from now
+              // 如果设置为null，将从现在起365天开始 if set null, will get from 365 days from now
               start_date= new Date();
               start_date.setMonth( start_date.getMonth() - 12  );
               start_date.setDate(start_date.getDate() + 1)
@@ -152,9 +152,9 @@ if (!String.prototype.formatString) {
           }
 
           
-          //trick
+          //技巧 trick
           if ( month_position[1].x - month_position[0].x < 40 ){
-            //Fix ugly graph by remove first item
+            // 通过删除第一项修复丑陋的图形 Fix ugly graph by remove first item
             month_position.shift(0);  
           }
 
@@ -164,12 +164,12 @@ if (!String.prototype.formatString) {
             loop_html += '<text x="'+ item.x +'" y="-5" class="month">'+ month_name +'</text>';
           }
 
-          //Add Monday, Wenesday, Friday label
+          //添加星期一，星期三，星期五的标签 Add Monday, Wenesday, Friday label
           loop_html +=  '<text text-anchor="middle" class="wday" dx="-10" dy="22">{0}</text>'.formatString( settings.h_days[0] )+
                         '<text text-anchor="middle" class="wday" dx="-10" dy="48">{0}</text>'.formatString( settings.h_days[1] )+
                         '<text text-anchor="middle" class="wday" dx="-10" dy="74">{0}</text>'.formatString( settings.h_days[2] );
           
-          //Fixed size for now with width= 721 and height = 110
+          //现在固定的大小为宽度=721和高度=110 Fixed size for now with width= 721 and height = 110
           var wire_html = 
             '<svg width="721" height="110" viewBox="0 0 721 110"  class="js-calendar-graph-svg">'+
               '<g transform="translate(20, 20)">'+
@@ -203,7 +203,7 @@ if (!String.prototype.formatString) {
           $('.svg-tip').hide();
         }
         
-        //handle event mouseenter when enter into rect element
+        // 当进入矩形元素时处理mouseenter事件 handle event mouseenter when enter into rect element
         var mouseEnter = function(evt){
 
           var target_offset = $(evt.target).offset();
@@ -221,6 +221,7 @@ if (!String.prototype.formatString) {
           svg_tip.css({top:target_offset.top - svg_height - 5});
           svg_tip.css({left:target_offset.left -svg_width});
         }
+        //附加工具提示，当鼠标进入rect元素时显示默认是显示:无
         //Append tooltip to display when mouse enter the rect element
         //Default is display:none
         var appendTooltip = function(){
@@ -240,7 +241,7 @@ if (!String.prototype.formatString) {
           //List of name months
           month_names: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
           h_days : ['M','W','F'],
-          //Default is empty, it can be overrided
+          // 默认为空，可以重写 Default is empty, it can be overrided
           data:[],
         }, options );
 
