@@ -1,3 +1,5 @@
+forked [Github-Contribution-Graph](https://github.com/bachvtuan/Github-Contribution-Graph)
+
 # Github-Contribution-Graph
 Jquery plugin to render like contribution graph on Github when you view user's profile, You can use it to apply on other JS framework like Angularjs as well. 
 
