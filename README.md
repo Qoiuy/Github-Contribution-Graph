@@ -1,4 +1,46 @@
-forked [Github-Contribution-Graph](https://github.com/bachvtuan/Github-Contribution-Graph)
+### forked [Github-Contribution-Graph](https://github.com/bachvtuan/Github-Contribution-Graph)
+
+## 心心念这个块块 很久很久了 一直没有好的机会 
+
+## 最近需要一个这样的功能
+
+### 我发现原来的代码 只支持一年的 而我的需求是 2000 个块块 和原项目需求完全不一样 所以要进行修改
+
+
+
+
+
+### 我修改了哪里?
+
+之前的实现逻辑看起来比较乱 如图1。
+
+我改成了80行左右的代码  如 图2
+
+
+
+<img src="https://iszhanggc-private-blog.oss-cn-beijing.aliyuncs.com/typora_pic/image-20220831184111247.png" alt="image-20220831184111247" style="zoom:25%;" />
+
+图1
+
+<img src="https://iszhanggc-private-blog.oss-cn-beijing.aliyuncs.com/typora_pic/image-20220831184853711.png" alt="image-20220831184853711" style="zoom:50%;" />
+
+图2
+
+### 备注：
+
+后续自己修改应该要注意的
+
+- 这个图像是一列列生成的。 
+
+- 有一些js的代码优化 我就不管了
+- 核心逻辑 使用svg标签展示内容
+- 鼠标滑动 展示的内容 核心代码 var text = "{0} {1} on {2}".formatString( count, count_text , date );
+- mouseLeave mouseEnter 鼠标悬停和鼠标离开 实现
+- String.prototype.formatString 方法 被  “鼠标悬停”方法调用
+
+
+
+
 
 # Github-Contribution-Graph
 Jquery plugin to render like contribution graph on Github when you view user's profile, You can use it to apply on other JS framework like Angularjs as well. 
