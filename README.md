@@ -37,6 +37,8 @@
 - 鼠标滑动 展示的内容 核心代码 var text = "{0} {1} on {2}".formatString( count, count_text , date );
 - mouseLeave mouseEnter 鼠标悬停和鼠标离开 实现
 - String.prototype.formatString 方法 被  “鼠标悬停”方法调用
+- dc = data count => 统计值
+- show 鼠标悬停显示的内容 （后半部分）
 
 
 
